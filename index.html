@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word count</title>
+    <style>
+        body {
+            padding: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            color: darkgreen;
+        }
+
+        #textarea {
+            padding: 2px;
+            width: 60%;
+            margin-left: 50%;
+            border: 2px solid darkgreen;
+            translate: -50%;
+
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Word count</h1>
+    <div class="id">
+        <textarea id="textarea" cols="30" rows="10"></textarea>
+        <h2> <span id="word">0 </span>Words <span id="cunt">0</span> Characters
+        </h2>
+
+    </div>
+  <script>
+    let textbox = document.querySelector('#textarea');
+    textbox.addEventListener('input',function(){
+        let text= this.value;
+       let word =text.length;
+     document.querySelector('#word').innerHTML= word;
+       text= text.trim();
+     let wod = text.split(' ');
+     let spc =wod.filter(function(e){
+        return e !='';
+     });
+     document.querySelector('#cunt').innerHTML= spc.length;
+    })
+  </script>
+
+</body>
+
+</html>
